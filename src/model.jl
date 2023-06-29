@@ -63,7 +63,7 @@ function (m::EffNet)(x)
     if m.top ≡ nothing
         return o
     end
-    m.top(flatten(o))
+    m.top(Flux.flatten(o))
 end
 
 function (m::EffNet)(x::V, ::Val{:stages}) where V <: AbstractArray
